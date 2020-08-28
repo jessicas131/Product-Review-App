@@ -1,29 +1,38 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport')
-var logger = require('morgan');
 var methodOverride = require('method-override')
 
+//load the env
 require('dotenv').config();
 
-require('./config/database')
+//Express App
+var app = express();
 
+//Mongo DB with Mongoose
+require('./config/database');
+//configure passport
+require('./config/passport');
+
+//Require routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-var app = express();
+var productsRouter = require('./routes/products');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(session({
   secret: 'SEIRocks!',
   resave: false,
@@ -31,15 +40,18 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Custom middleware passes req.user to all templates
 app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
 });
-app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
 
+
+//mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
