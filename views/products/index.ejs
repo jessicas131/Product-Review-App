@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-</head>
-<body>
+<%- include('../partials/header') %>
   <div>
   <% if (user) { %>
     <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
@@ -17,5 +10,24 @@
   <form method="GET" action="/products/new">
     <button type="submit">Add Product</button>
   </form>
-</body>
-</html>
+
+  <div class="container">
+    <% products.forEach(function(p) { %>
+      <div>
+        <a href="products/<%=p._id%>">
+         <img src="<%= p.img %>">
+      </div>
+      <div>
+        <%= p.productName %>
+      </div>
+      <div>
+        <%= p.productType %>
+      </div>
+    </a>
+    <form method="GET" action="products/<%= p._id %>">
+      <button type="submit">Product Details</button>
+    </form>
+  </div>
+  <% }); %>
+
+  <%- include('../partials/footer') %>

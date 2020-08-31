@@ -1,8 +1,16 @@
 const Product = require('../models/product');
 
 module.exports = {
+  index,
   new: newProduct,
   create,
+  show
+}
+
+function index(req, res) {
+  Product.find({}, function(err, products) {
+    res.render('products/index', { products });
+  });
 }
 
 function newProduct(req,res) {
@@ -14,6 +22,12 @@ function create (req,res) {
   product.user = req.user._id;
   product.save(function(err){
     if (err) return render('<h3>Must be a member to create a product</h3>');
-    res.redirect(`/products/${product.id}`);
+    res.redirect(`/products`);
   });
 };
+
+function show(req, res) {
+  Product.findById(req.params.id, function(err, product) {
+    res.render('products/show', {title: 'Product Detail', product} )
+  })
+}

@@ -8,6 +8,7 @@
     <select name="productType">
     <option value="makeup remover">Makeup Remover</option>
     <option value="cleanser">Cleanser</option>
+    <option value="toner">Toner</option>
     <option value="exfoliator">Exfoliator</option>
     <option value="moisturizer">Moisturizer</option>
     <option value="sun care">Sun Care</option>
@@ -18,5 +19,9 @@
   <label>Price:
     <input name="price" type="number" min="0">
   </label><br>
+  <label>Manufacturer's Description:
+    <input name="description" type="text">
+  </label><br>
+  <input class="addButton" type= "submit" value="Add Product">
   </form>
 <%- include('../partials/footer') %>

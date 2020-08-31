@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('partials/header') %>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <!-- Add login UI here -->
-    <ul class="right">
-      <li>
-      <% if (user) { %>
-        <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-      <% } else { %>
-        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-      <% } %>
-      <img src="images/makeup.png">
-      </li>
-    </ul>
-  </body>
-</html>
+    <p>Welcome to the Landing Page</p>
+    
+    <%- include('partials/footer') %>

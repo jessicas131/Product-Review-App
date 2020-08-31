@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" class="rel">
-  <title>Flights</title>
+  <title>Product Review</title>
 </head>
 <body>
   <nav>
     <a href="/">Home</a>
   </nav>
+  <ul class="right">
+    <li>
+    <% if (user) { %>
+      <a href="/logout">Log Out</a>
+    <% } else { %>
+      <a href="/auth/google">Login with Google</a>
+    <% } %>
+    <img src="images/makeup.png">
+    </li>
+  </ul>
   <main>
 
 
