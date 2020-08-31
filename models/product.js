@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
   img: {
     type: String,
-    default: public/images/makeup.png
+    default: 'images/makeup.png'
   },
   productName: {
     type: String

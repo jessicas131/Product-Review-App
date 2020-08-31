@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<h2>Add a New Product:</h2>
+<form action="/products" method='POST'>
+  <label>Product Name:
+    <input type="text" name="productName">
+  </label><br/>
+  <label>Product Category:
+    <select name="productType">
+    <option value="makeup remover">Makeup Remover</option>
+    <option value="cleanser">Cleanser</option>
+    <option value="exfoliator">Exfoliator</option>
+    <option value="moisturizer">Moisturizer</option>
+    <option value="sun care">Sun Care</option>
+    <option value="eye care">Eye Care</option>
+    <option value="treatments and serums">Treatments and Serums</option>
+  </select>
+  </label>
+  <label>Price:
+    <input name="price" type="number" min="0">
+  </label><br>
+  </form>
+<%- include('../partials/footer') %>
