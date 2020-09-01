@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, productsCtrl.index);
 router.get('/new', isLoggedIn, productsCtrl.new);
 router.post('/', isLoggedIn, productsCtrl.create);
 router.get('/:id', productsCtrl.show);
+router.get('/:id/edit',isLoggedIn, productsCtrl.edit);
+router.put('/:id', productsCtrl.update);
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

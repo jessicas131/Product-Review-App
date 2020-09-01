@@ -5,7 +5,9 @@ module.exports = {
   index,
   new: newProduct,
   create,
-  show
+  show,
+  edit,
+  update
 }
 
 function index(req, res) {
@@ -32,5 +34,23 @@ function show(req, res) {
     Review.find({product: product._id}, function (err, review) {
       res.render('products/show', {title: 'Product Detail', product, review} )
     });
+  });
+}
+
+function edit(req,res) {
+  Product.findById(req.params.id, function(err, product){
+    if(err) {
+      res.redirect(`/products`);
+    }
+    res.render('products/edit', {title: 'Edit Product', product });
+  });
+}
+
+function update(req, res) {
+  Product.findByIdAndUpdate(req.params.id, req.body, function(err, product) {
+    if(err) {
+      res.render('products/edit', {title: 'Edit Product', product });
+    }
+    res.redirect(`/products`);
   });
 }
