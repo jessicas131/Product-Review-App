@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const Review= require('../models/review');
 
 module.exports = {
   index,
@@ -27,7 +28,9 @@ function create (req,res) {
 };
 
 function show(req, res) {
-  Product.findById(req.params.id, function(err, product) {
-    res.render('products/show', {title: 'Product Detail', product} )
-  })
+  Product.findById(req.params.id, function(err, product) { 
+    Review.find({product: product._id}, function (err, review) {
+      res.render('products/show', {title: 'Product Detail', product, review} )
+    });
+  });
 }

@@ -20,6 +20,47 @@
     <h3>Price:</h3>
     <span><%= product.description %></span>
   </div>
-  <!--Add Reviews Below-->
-  
+  <br/>
+  <!--Add Review Below-->
+  <h3>Reviews:</h3>
+  <form id="add-review" method="POST" action='/products/<%= product. _id %>/reviews'>
+    <label>Review:</label>
+    <textarea name= "content"></textarea>
+    <label>Rating:</label>
+    <span>1= "I will never use this product again" to 5= "Can't imagine life without it"</span>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <input type="submit" value= "Add Review">
+  </form>
+  <br/>
+  <!--Post Reviews Below-->
+  <% if (review.length) { %>
+
+      <% review.forEach(function(r) { %>
+        <div class="reviewContainer"></div>
+        <div>
+          <h6>Date:</h6> 
+          <%= r.createdAt.toLocaleDateString() %>
+        </div>
+        <div>
+          <h6>Review:</h6> 
+          <%= r.content %>
+        </div>
+        <div>
+          <h6>Rating:</h6> 
+          <%= r.rating %>
+        </div>
+      </div>
+        <% }); %>
+    <% } else { %>
+      <h5>No Reviews Yet</h5>
+
+  <% } %>
+
+
 <%- include('../partials/footer') %>

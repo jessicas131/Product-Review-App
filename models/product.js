@@ -16,7 +16,7 @@ const productSchema = new Schema({
     type: Number,
     min: 0,
   },
-  description:{
+  description: {
     type: String
   },
   user: {
