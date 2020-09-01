@@ -9,17 +9,14 @@
     <span><%= product.productType %></span>
   </div>
   <div>
-    <h3>Product Category:</h3>
-    <span><%= product.productType %></span>
+    <h3>Manufacturer's Description:</h3>
+    <span><%= product.description %></span>
   </div>
   <div>
     <h3>Price:</h3>
     <span><%= product.price %></span>
   </div>
-  <div>
-    <h3>Price:</h3>
-    <span><%= product.description %></span>
-  </div>
+  
   <br/>
   <!--Add Review Below-->
   <h3>Reviews:</h3>
@@ -62,5 +59,15 @@
 
   <% } %>
 
+  <% review.forEach(function(review) { %>
+    <div class="review">
+      <%= review.text %><br/>
+      <% if (review.user.equals(user._id)) { %>
+        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+      <% } %>
+    </div>
+  <% }) %>
 
 <%- include('../partials/footer') %>
