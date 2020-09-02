@@ -9,15 +9,14 @@ a {
 ul {
   list-style: none;
 }
-main{
+
+main {
   margin: 0;
   padding: 0;
   height: 100vh;
-  
 }
 
-
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +25,11 @@ nav{
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+#title {
+  font-family: 'Bebas Neue', cursive;
+}
+
 
 /* body{
   margin: 0;
