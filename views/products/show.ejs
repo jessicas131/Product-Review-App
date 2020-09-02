@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header2') %>
   <div class="container">
   <div>
     <h3>Product Name:</h3>
@@ -62,6 +62,7 @@
   <% review.forEach(function(review) { %>
     <div class="review">
       <%= review.text %><br/>
+      <%= review.user.name %><br/>
       <% if (review.user.equals(user._id)) { %>
         <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
           <button type="submit">X</button>

@@ -29,9 +29,17 @@ function create (req,res) {
   });
 };
 
+// function show(req, res) {
+//   Product.findById(req.params.id, function(err, product) { 
+//     Review.find({product: product._id}, function (err, review) {
+//       res.render('products/show', {title: 'Product Detail', product, review} )
+//     });
+//   });
+// }
+
 function show(req, res) {
-  Product.findById(req.params.id, function(err, product) { 
-    Review.find({product: product._id}, function (err, review) {
+  Product.findById(req.params.id).populate('user').exec(function(err, product) { 
+    Review.find({product: product._id}).populate('user').exec(function (err, review) {
       res.render('products/show', {title: 'Product Detail', product, review} )
     });
   });
