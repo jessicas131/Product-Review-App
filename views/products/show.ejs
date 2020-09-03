@@ -44,6 +44,7 @@
   </form>
   <br/>
   <!--Post Reviews Below-->
+  <section class="written-reviews">
   <% if (review.length) { %>
 
       <% review.forEach(function(r) { %>
@@ -78,8 +79,21 @@
       <h5>No Reviews Yet</h5>
 
   <% } %>
+</section>
+  
+<%- include('../partials/footer') %>
 
-  <!-- <% review.forEach(function(review) { %>
+
+
+
+
+
+
+
+
+
+
+<!-- <% review.forEach(function(review) { %>
     <div class="review">
       <%= review.text %><br/>
       <%= review.user.name %><br/>
@@ -92,4 +106,3 @@
   <% }) %>
   </div>
   <br> -->
-<%- include('../partials/footer') %>

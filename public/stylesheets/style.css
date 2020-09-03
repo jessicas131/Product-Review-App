@@ -94,9 +94,14 @@ nav {
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  border: 1px;
+  border: solid 1px;
 }
 
+.written-reviews{
+  display: flex;
+  flex-direction: row;
+  border: solid 5px;
+}
 
 
 
@@ -107,6 +112,7 @@ nav {
     margin-bottom: 20px;
   }
 }
+
 
 
 
