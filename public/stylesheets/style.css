@@ -85,7 +85,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px;
+ 
   
 }
 
@@ -94,13 +94,13 @@ nav {
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  border: solid 1px;
+ 
 }
 
 .written-reviews{
   display: flex;
-  flex-direction: row;
-  border: solid 5px;
+  flex-direction: column;
+  
 }
 
 
