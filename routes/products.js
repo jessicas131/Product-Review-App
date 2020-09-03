@@ -8,8 +8,10 @@ const productsCtrl = require('../controllers/products');
 // });
 
 router.get('/', isLoggedIn, productsCtrl.index);
-router.get('/new', isLoggedIn, productsCtrl.new);
+
 router.post('/', isLoggedIn, productsCtrl.create);
+router.get('/new', isLoggedIn, productsCtrl.new);
+
 router.get('/:id', productsCtrl.show);
 router.get('/:id/edit',isLoggedIn, productsCtrl.edit);
 router.put('/:id', productsCtrl.update);

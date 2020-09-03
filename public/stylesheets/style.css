@@ -5,10 +5,13 @@
 
 a {
   color: black;
+  cursor: pointer;
+  text-decoration: none;
 }
 ul {
   list-style: none;
 }
+
 
 main {
   margin: 0;
@@ -28,7 +31,66 @@ nav {
 
 #title {
   font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
 }
+
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin: 20px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.inside-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
 
 
 /* body{
@@ -51,44 +113,3 @@ nav {
   padding: 20px;
   overflow-y: scroll;
 } */
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-  margin: 20px;
-}
-
-.row {margin: 0 -5px;}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.inside-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px 16px;
-  text-align: center;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  margin: 20px;
-}
-
-
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-
-
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}

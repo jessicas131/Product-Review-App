@@ -1,5 +1,8 @@
 <%- include('../partials/header2') %>
-
+<div class="add-product-button">
+  <form method="GET" action="/products/new">
+  <button type="submit">Add Product</button>
+</div>
 
   <section class="container">
     <% products.forEach(function(p) { %>
@@ -8,7 +11,7 @@
         <article class="inside-card">
           <div>
             <a href="products/<%=p._id%>">
-            <img src="<%= p.img %>" style="width:15%">
+            <img src="<%= p.img %>">
           </div>
           <div>
             <%= p.productName %>
