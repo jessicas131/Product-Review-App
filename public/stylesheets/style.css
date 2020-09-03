@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 a {
@@ -14,7 +14,7 @@ ul {
 
 
 main {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   height: 100vh;
 }
@@ -79,6 +79,25 @@ nav {
 }
 
 
+.detail-container {
+  font: Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  
+}
+
+.review-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px;
+}
+
+
 
 
 @media screen and (max-width: 600px) {
@@ -88,6 +107,7 @@ nav {
     margin-bottom: 20px;
   }
 }
+
 
 
 

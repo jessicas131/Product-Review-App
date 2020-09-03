@@ -1,5 +1,17 @@
 <%- include('partials/header') %>
-    <h1><%= title %></h1>
+    <!-- <h1><%= title %></h1> -->
     <p>Welcome to the Landing Page</p>
     
+        <a href="/products"><h3>Products</h3></a>
+     
+      <ul class="right">
+        <li>
+        <% if (user) { %>
+          <a href="/logout">Log Out</a>
+        <% } else { %>
+          <a href="/auth/google">Login with Google</a>
+        <% } %>
+        <img src="images/hand-cream.png">
+        </li>
+      </ul>
     <%- include('partials/footer') %>
