@@ -1,17 +1,19 @@
 <%- include('partials/header') %>
     <!-- <h1><%= title %></h1> -->
-    <p>Welcome to the Landing Page</p>
-    
-        <a href="/products"><h3>Products</h3></a>
-     
-      <ul class="right">
-        <li>
-        <% if (user) { %>
-          <a href="/logout">Log Out</a>
-        <% } else { %>
-          <a href="/auth/google">Login with Google</a>
-        <% } %>
-        <img src="images/hand-cream.png">
-        </li>
-      </ul>
+    <div class="landing-container">
+    <h1 id="title">Stash App</h1>
+
+    <p>Login <strong>or</strong> Sign Up Below:</p>
+
+      <button class="login" type="button">
+      <% if (user) { %>
+      <a href="/logout">Log Out</a>
+      <% } else { %>
+        <a href="/auth/google">Login with Google</a>
+      <% } %>
+      </button>
+      <p>Stash App is made for skin care lovers by an esthictican. Once you are a member you can add products, rate, and review.</p>
+      Don't if you aren't a user yet, you can take a peek at the app <a href="/products">HERE.</a>
+      
+    </div>
     <%- include('partials/footer') %>

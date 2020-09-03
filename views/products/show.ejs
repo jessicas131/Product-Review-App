@@ -47,7 +47,7 @@
   <% if (review.length) { %>
 
       <% review.forEach(function(r) { %>
-      <div class="reviewContainer">
+        <div class="reviewContainer">
         <div>
           <h6>Date:</h6> 
           <%= r.createdAt.toLocaleDateString() %>
@@ -58,12 +58,19 @@
           <%= r.content %>
         </div>
         <br/>
+        <div><%= r.user.name %></div>
         <div>
           <h6>Rating:</h6> 
           <%= r.rating %>
         </div>
         <br/>
         </div>
+        <div>
+        <% if (r.user.equals(user._id)) { %>
+          <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+        <% } %>
       </div>
         <% }); %>
       
@@ -72,7 +79,7 @@
 
   <% } %>
 
-  <% review.forEach(function(review) { %>
+  <!-- <% review.forEach(function(review) { %>
     <div class="review">
       <%= review.text %><br/>
       <%= review.user.name %><br/>
@@ -84,5 +91,5 @@
     </div>
   <% }) %>
   </div>
-  <br>
+  <br> -->
 <%- include('../partials/footer') %>
