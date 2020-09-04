@@ -40,6 +40,8 @@ In the future I would like to add the following:
 
 * More CSS styling
 
+* Users can upload their own product photos
+
 * Search Bar
 
 *  Favorite Button
