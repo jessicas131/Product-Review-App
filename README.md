@@ -35,6 +35,8 @@ _____
 Once you have navigated to the landing page sign in with google to get the best expereience!
 <a href="https://jessica-products.herokuapp.com/">Click here to try!</a>
 
+To see my planning process, check out my Trello board <a href="https://trello.com/b/HGDr1jgT/sei-project-2-planning">here.</a>
+
 ## Next Steps
 In the future I would like to add the following:
 
